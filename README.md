@@ -197,7 +197,7 @@ Packages should be preferably installed via [Homebrew](https://brew.sh).
 Packages should be installed via FreeBSDs pre-compiled package repository using the `pkg` command or built from scratch using the `ports` database method.
 
 * Full "pkg" tool instructions: [handbook pkg method](https://www.freebsd.org/doc/handbook/pkgng-intro.html)
-  * `pkg install cmake python37 git autotools`
+  * `pkg install cmake python37 git autotools yara`
 OR
 * Full "ports" instructions: [handbook ports method](https://www.freebsd.org/doc/handbook/ports-using.html)
   * `portsnap fetch`
@@ -242,11 +242,11 @@ Note: Although RetDec now supports a system-wide installation ([#94](https://git
     # FreeBSD (and other BSDs) do need cmake, python3, git, autotools. OpenSSL is pre-installed in the OS but check its version.
     # Later versions may be available for each of the packages.
     # See what is installed:
-    sudo pkg info cmake python37 autotools
+    sudo pkg info cmake python37 autotools yara
     # Install/upgrade them:
-    sudo pkg install cmake python37 autotools
+    sudo pkg install cmake python37 autotools yara
     ```
-  * `cmake .. -DCMAKE_INSTALL_PREFIX=<path>`
+  * `cmake .. -DCMAKE_INSTALL_PREFIX=<path>` (<path> should be "/usr/local")
   * `make -jN` (`N` is the number of processes to use for parallel build, typically number of cores + 1 gives fastest compilation time)
   * `make install`
 
